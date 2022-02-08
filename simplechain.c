@@ -6,26 +6,30 @@
 int main (int argc, char *argv[]) {
    pid_t childpid = 0;
    int i, option, index;
+   int k = 1;
+   int m = 3;
    int n = 4;
 
-   while ((option = getopt (argc, argv, ":hp:csi")) != -1) {
+   while ((option = getopt (argc, argv, ":hp:cs:i:")) != -1) {
       switch (option)
          {
          case 'h':
             printf("h is working!\n");
             break;
          case 'p':
+            //Number of processes
             n = atoi(optarg);
-            printf("p (nprocs goes here) is working!\n");
             break;
          case 'c':
             printf("c (nchars goes here) is working!\n");
             break;
          case 's':
-            printf("s (sleeptime goes here) is working!\n");
+            //Sleep time 'm', in seconds
+            m = atoi(optarg);
             break;
          case 'i':
-            printf("i (niters goes here) is working!\n");
+            //Number of iterations 'k'
+            k = atoi(optarg);
             break;
          case '?':
             printf("Usage: %s -p [# of processes]\n",argv[0]);
@@ -48,9 +52,11 @@ int main (int argc, char *argv[]) {
       if (childpid = fork())
          break;
 
-   sleep(10);
-   fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
-      i, (long)getpid(), (long)getppid(), (long)childpid);
+   for (i = 1; i < k + 1; i++) {
+      sleep(m);
+      fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
+         i, (long)getpid(), (long)getppid(), (long)childpid);
+   }
 
    return 0;
 }
