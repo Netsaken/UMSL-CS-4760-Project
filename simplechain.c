@@ -1,7 +1,7 @@
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main (int argc, char *argv[]) {
    pid_t childpid = 0;
@@ -54,6 +54,7 @@ int main (int argc, char *argv[]) {
 
    for (i = 1; i < k + 1; i++) {
       sleep(m);
+      wait;
       fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
          i, (long)getpid(), (long)getppid(), (long)childpid);
    }

@@ -1,7 +1,10 @@
 How to Run:
 1. Navigate to project folder
 2. Run "make"
-3. Invoke program using "./chain -p #" where '#' is the number of processes
+3. Invoke program using "./chain -p # -s # -i #" 
+    The # after -p should be the number of processes you want to run
+    The # after -s should be the time to sleep between iterations, in seconds
+    The # after -i should be the number of iterations you want to run
 
 Git Repository: https://github.com/Netsaken/UMSL-CS-4760-Project
 
@@ -20,5 +23,5 @@ reverse order when I run 30 processes.
     3/28, 4/28, 7/27, 5/28, 6/28, 2/28, 5/28, 2/28, 5/28
     39 / 251 = 15.54% of Processes adopted by Init
 
-5. Even though it's just printing out the processes, it's printing them out in a slightly
-different order each time. Also, only the last iteration prints out PPIDs of '1'.
+5. Every time it prints out the processes, it's printing them out in a slightly
+different order each time. Only the last iteration prints out PPIDs of '1'.
