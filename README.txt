@@ -25,3 +25,10 @@ reverse order when I run 30 processes.
 
 5. Every time it prints out the processes, it's printing them out in a slightly
 different order each time. Only the last iteration prints out PPIDs of '1'.
+
+6. The program runs in an identical way to step 5 if I use "wait;". It will execute with
+an n value of 100, but it will not print more than 28 per iteration. If I instead use 
+"wait(NULL);", only a couple of the processes in all iterations are printed at a time,
+based on my sleep time. The iterations are interleaved, but are otherwise very uniform; there
+are no orphaned processes. However, even if I run for an n of 100, each iteration still only
+shows 28 processes.
