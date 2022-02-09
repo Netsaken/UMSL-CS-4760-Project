@@ -79,7 +79,7 @@ int main (int argc, char *argv[]) {
 
       wait(NULL);
       if (wait(&status) < 0) {
-         perror(message);
+      //   perror(message);
       }
       
       while ((c != EOF) && (cpos < nchars)) {
