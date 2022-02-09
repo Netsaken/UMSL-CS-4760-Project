@@ -1,10 +1,13 @@
 How to Run:
 1. Navigate to project folder
 2. Run "make"
-3. Invoke program using "./chain -p # -s # -i #" 
+3. Invoke program using "./chain [-h] -p # -c # -s # -i # < FileName" 
+    -h is optional. It will simply print these instructions, then end the program.
     The # after -p should be the number of processes you want to run
+    The # after -c should be the number of characters you want to process from the file
     The # after -s should be the time to sleep between iterations, in seconds
     The # after -i should be the number of iterations you want to run
+    Replace FileName with the name of a text file
 
 Git Repository: https://github.com/Netsaken/UMSL-CS-4760-Project
 
@@ -38,3 +41,13 @@ reverse order.
 I can easily tell which process generated each part of the output, and there don't seem to
 be any differences no matter how many times I run the program. I noticed that setting
 n to 1 prints all processes at once, but this likely worked in step 6 as well.
+
+8. The program prints IDs in reverse order, but the text is printed by each process in
+normal order.
+
+Problems Encountered:
+- I commented out one of the "perror" calls, since it would get called on every
+iteration and I wasn't sure if that was correct.
+- When running the program with more than 1 process on Hoare, only the first process
+will print the text from the file, while the rest will only print garbage. This did not
+happen on my home machine, so I'm not sure what went wrong.

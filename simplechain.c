@@ -17,7 +17,13 @@ int main (int argc, char *argv[]) {
       switch (option)
          {
          case 'h':
-            printf("h is working!\n");
+            printf("Invoke program using \"./chain [-h] -p # -c # -s # -i # < FileName\"\n");
+            printf("-h is optional. It will simply print these instructions, then end the program.\n");
+            printf("The # after -p should be the number of processes you want to run\n");
+            printf("The # after -c should be the number of characters you want to process from the file\n");
+            printf("The # after -s should be the time to sleep between iterations, in seconds\n");
+            printf("The # after -i should be the number of iterations you want to run\n");
+            printf("Replace FileName with the name of a text file\n");
             return 1;
             break;
          case 'p':
