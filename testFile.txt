@@ -1,0 +1,6 @@
+This is a test file. It's filled with random stuff that doesn't make any difference,
+just a stream of characters and consciousness that goes on for the requisite number of
+characters needed to test this program properly. Hopefully it works, because man, these
+project specs. Don't forget some error handling, so you can use perror, because it's 
+worth 10 points, ya know! Insert a meme here, preferably a funny one. You don't know one?
+That's too bad.
